@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <title>Periodic Table Information Finder</title>
+
+    <link rel="icon" type="image/x-icon" href="logo.png">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #20173e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #5e91b4;
+            margin-bottom: 5px;
+            text-shadow: 0 0 12px #f9e3b8;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #5e91b4;
+            text-shadow: 0 0 12px #f9e3b8;
+        }
+
+        main {
+            background: rgba(146, 214, 118, 0.7);
+            padding: 30px;
+            border-radius: 14px;
+            width: 380px;
+            text-align: center;
+            border: 3px solid #74c24a; 
+            box-shadow: 0 0 20px #f9e3b8; 
+        }
+
+        form {
+            padding: 5px;
+        }
+
+        label {
+            display: block;
+            color: #f9e3b8;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 12px 14px;
+            margin: 10px 0;
+            border: 2px solid #74c24a;
+            border-radius: 6px;
+            font-size: 15px;
+            background: #619e68;
+            color: white;
+        }
+
+        input[type="text"]::placeholder {
+            color: #d1c4e9;
+        }
+
+        input[type="text"]:focus {
+            border-color: #f9e3b8;
+            outline: none;
+        }
+
+        input[type="button"], button {
+            background-color: #5e91b4;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            margin-top: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            box-shadow: 0 0 15px #f9e3b8;
+            transition: all 0.3s ease;
+        }
+
+        input[type="button"]:hover, button:hover {
+            background-color: #3f637b;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #f9e3b8;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="reactor">
+            <img src="logo.png" alt="logo" height="100px" class="rounded">
+        </div>
+        <h1>Periodic Table Finder</h1>
+        <p>Non-Metal Element Information</p>
+        <form onsubmit="return false;">
+            <label for="element_input">Enter Element Symbol:</label>
+            <input type="text" id="element_input" placeholder="e.g., He, O, Cl"><br>
+            <input type="button" py-click="search_element" value="Search">
+        </form>
+        <div id="result"></div>
+    </main>
+
+    <py-script src="./main.py"></py-script>
+</body>
+</html>
